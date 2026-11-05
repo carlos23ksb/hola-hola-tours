@@ -1,4 +1,4 @@
-const CACHE = 'hola-hola-tours-v1';
+const CACHE = 'hola-hola-tours-v2';
 const CORE = ['index.html', 'manifest.json', 'img/logo.jpg', 'img/hero.jpg'];
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(CORE); }).catch(function () {}));
@@ -14,6 +14,21 @@ self.addEventListener('fetch', function (e) {
   if (e.request.method !== 'GET') return;
   var url = new URL(e.request.url);
   if (url.origin !== self.location.origin) return;
+  /* La pagina siempre se pide a la red primero: asi los cambios se ven
+     al momento y no se queda la version vieja guardada en el telefono.
+     Si no hay internet, se muestra la copia guardada. */
+  if (e.request.mode === 'navigate' || url.pathname.indexOf('index.html') !== -1) {
+    e.respondWith(
+      fetch(e.request).then(function (res) {
+        if (res && res.ok) {
+          var copy = res.clone();
+          caches.open(CACHE).then(function (c) { c.put(e.request, copy); });
+        }
+        return res;
+      }).catch(function () { return caches.match(e.request); })
+    );
+    return;
+  }
   e.respondWith(
     caches.match(e.request).then(function (hit) {
       if (hit) return hit;

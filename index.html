@@ -52,7 +52,14 @@ h2{font-size:clamp(1.6rem,5vw,2.3rem);margin-bottom:8px}
 .card .ph img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .4s}
 .card:hover .ph img{transform:scale(1.05)}
 .card .ph.tall{height:300px}
-.card .ph.yate{height:auto;aspect-ratio:854/601}
+.card .ph.yate{height:auto;aspect-ratio:854/601;cursor:pointer;position:relative}
+.card .ph.yate::after{content:"🔍 Toca para ampliar";position:absolute;right:10px;bottom:10px;background:rgba(10,40,55,.78);color:#fff;font-size:12px;font-weight:700;padding:5px 10px;border-radius:20px;pointer-events:none}
+/* Visor de fotos en grande (yates) */
+.lightbox{position:fixed;inset:0;background:rgba(5,25,35,.94);display:none;align-items:center;justify-content:center;z-index:200;padding:16px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:96vw;max-height:88vh;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lightbox .lb-close{position:absolute;top:14px;right:16px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:#0b3b4d;font-size:24px;font-weight:700;cursor:pointer}
+.lightbox .lb-cap{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#fff;font-weight:700}
 .card .body{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}
 .card h3{font-size:1.18rem;margin-bottom:4px}
 .card .meta{font-size:.85rem;color:#5b8a9c;font-weight:700;margin-bottom:8px}
@@ -243,6 +250,12 @@ footer b{color:var(--teal)}
 
 <a class="wa-float" href="https://wa.me/529841672116?text=Hola%20Hola%20Hola%20Tours%2C%20quiero%20cotizar%20un%20tour" aria-label="WhatsApp">💬</a>
 
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Foto ampliada">
+  <button class="lb-close" id="lbClose" aria-label="Cerrar">✕</button>
+  <img id="lbImg" src="" alt="">
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
 <script>
 (function(){
   var io=new IntersectionObserver(function(es){
@@ -250,6 +263,18 @@ footer b{color:var(--teal)}
   },{threshold:.12});
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
   if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(function(){}); }
+  /* Visor de fotos de yates: al tocar la foto se abre en grande */
+  var lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg'), lbCap=document.getElementById('lbCap');
+  document.querySelectorAll('.ph.yate img').forEach(function(im){
+    im.addEventListener('click', function(){
+      lbImg.src=im.getAttribute('src'); lbImg.alt=im.alt||''; lbCap.textContent=im.alt||'';
+      lb.classList.add('open'); document.body.style.overflow='hidden';
+    });
+  });
+  function cerrarLb(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+  document.getElementById('lbClose').addEventListener('click', cerrarLb);
+  lb.addEventListener('click', function(e){ if(e.target===lb) cerrarLb(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') cerrarLb(); });
 })();
 </script>
 </body>

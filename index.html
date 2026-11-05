@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hola Hola Tours — Vive el Caribe como siempre soñaste</title>
+<meta name="description" content="Hola Hola Tours: experiencias en la Riviera Maya. Isla Mujeres, Cozumel, Chichén Itzá, Bacalar, cenotes, catamaranes, yates y pesca deportiva. Cotiza por WhatsApp.">
+<meta name="theme-color" content="#7fd4e8">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="img/logo.jpg">
+<style>
+:root{
+  --sky:#bfe9f7; --sky2:#d6f0fa; --sky3:#8fd4ea;
+  --sun:#fff6bf; --sun2:#ffefa3; --sun3:#ffd94d;
+  --teal:#0e4a5e; --teal2:#146b84; --ink:#17384a;
+  --white:#ffffff; --sand:#fffaf0;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--sky2) 0%,#eaf7fd 30%,var(--sun) 78%,#fffbe8 100%);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none}
+h1,h2,h3{color:var(--teal);line-height:1.15}
+section{padding:56px 18px;position:relative}
+.wrap{max-width:1100px;margin:0 auto}
+.eyebrow{display:inline-block;background:var(--sun2);color:var(--teal);font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;padding:7px 14px;border-radius:999px;margin-bottom:12px}
+h2{font-size:clamp(1.6rem,5vw,2.3rem);margin-bottom:8px}
+.sub{color:#3d6a7d;max-width:640px;margin-bottom:28px;font-size:1.02rem;line-height:1.55}
+/* HERO */
+.hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:70px 18px 90px;background:linear-gradient(180deg,rgba(191,233,247,.25),rgba(255,246,191,.35)),url('img/hero.jpg') center/cover no-repeat;position:relative}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:90px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 90' preserveAspectRatio='none'%3E%3Cpath d='M0,50 C200,90 400,10 600,45 C800,80 1000,20 1200,50 L1200,90 L0,90 Z' fill='%23ffffff'/%3E%3C/svg%3E") center/cover no-repeat}
+.hero .logo{width:150px;height:150px;object-fit:cover;border-radius:50%;border:6px solid #fff;box-shadow:0 10px 30px rgba(14,74,94,.35);margin-bottom:18px;background:#fff}
+.hero h1{font-size:clamp(2.2rem,8vw,3.6rem);color:#fff;text-shadow:0 2px 14px rgba(14,74,94,.55)}
+.hero .tag{font-size:clamp(1.1rem,4vw,1.5rem);color:#fff;font-weight:600;text-shadow:0 2px 10px rgba(14,74,94,.55);margin:10px 0 6px}
+.hero .tag2{color:#fff;text-shadow:0 1px 8px rgba(14,74,94,.6);margin-bottom:26px}
+.palm{position:absolute;font-size:64px;opacity:.9;filter:drop-shadow(0 4px 8px rgba(0,0,0,.2));z-index:1}
+.palm.l{left:14px;top:60px;transform:rotate(-12deg)}
+.palm.r{right:14px;bottom:120px;transform:scaleX(-1) rotate(-8deg)}
+.btn{display:inline-block;background:#25d366;color:#fff;font-weight:800;font-size:1.05rem;padding:15px 30px;border-radius:999px;box-shadow:0 8px 22px rgba(37,211,102,.45);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 12px 28px rgba(37,211,102,.55)}
+.btn.small{padding:11px 20px;font-size:.95rem}
+.btn.blue{background:var(--teal2);box-shadow:0 8px 22px rgba(20,107,132,.35)}
+/* WAVES */
+.wave{display:block;width:100%;height:60px;margin:-1px 0}
+.wave path{fill:var(--sky)}
+.wave.yellow path{fill:var(--sun)}
+/* GRID + CARDS */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.card{background:var(--white);border-radius:22px;overflow:hidden;box-shadow:0 8px 24px rgba(14,74,94,.12);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s;border:2px solid #fff}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(14,74,94,.2)}
+.card .ph{height:210px;overflow:hidden;background:var(--sky2)}
+.card .ph img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .4s}
+.card:hover .ph img{transform:scale(1.05)}
+.card .ph.tall{height:300px}
+.card .body{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:1.18rem;margin-bottom:4px}
+.card .meta{font-size:.85rem;color:#5b8a9c;font-weight:700;margin-bottom:8px}
+.card ul{list-style:none;margin:0 0 16px;flex:1}
+.card ul li{font-size:.93rem;line-height:1.5;padding-left:22px;position:relative;margin-bottom:4px;color:#33586a}
+.card ul li::before{content:"🌊";position:absolute;left:0;top:0;font-size:.8rem}
+.card ul li.palm-li::before{content:"🌴"}
+.card .body .btn{align-self:flex-start}
+.note{background:#fff;border:2px dashed var(--sky3);border-radius:18px;padding:16px 20px;color:#2c5a6d;font-size:.98rem;line-height:1.55;margin-top:26px}
+/* GALLERY */
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.gal img{width:100%;height:180px;object-fit:cover;border-radius:16px;box-shadow:0 6px 18px rgba(14,74,94,.15);transition:transform .25s}
+.gal img:hover{transform:scale(1.04)}
+/* MEETING + CONTACT */
+.meet{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+.meet img{border-radius:22px;box-shadow:0 10px 26px rgba(14,74,94,.18)}
+.contact{text-align:center;background:linear-gradient(180deg,#fff, var(--sun));border-radius:28px;padding:44px 22px;box-shadow:0 10px 30px rgba(14,74,94,.12)}
+.contact h2{margin-bottom:6px}
+.contact p{color:#3d6a7d;margin-bottom:22px;line-height:1.6}
+.contact .big{font-size:1.3rem;font-weight:800;color:var(--teal)}
+footer{text-align:center;padding:26px 16px 40px;color:#4a7488;font-size:.9rem}
+footer b{color:var(--teal)}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.4s}
+/* FLOATING WA */
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:50;background:#25d366;color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:0 10px 26px rgba(37,211,102,.5)}
+@media(max-width:640px){
+  .meet{grid-template-columns:1fr}
+  .card .ph{height:190px}
+  .palm{font-size:44px}
+  section{padding:44px 14px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="palm l">🌴</span><span class="palm r">🌴</span>
+  <img class="logo" src="img/logo.jpg" alt="Hola Hola Tours — logo">
+  <h1>Hola Hola Tours</h1>
+  <p class="tag">Vive el Caribe como siempre soñaste</p>
+  <p class="tag2">Experiencias en la Riviera Maya 🌊☀️</p>
+  <a class="btn" href="https://wa.me/529844682036?text=Hola%20Hola%20Hola%20Tours%2C%20quiero%20cotizar%20un%20tour">💬 Cotizar por WhatsApp</a>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="reveal"><span class="eyebrow">🏝️ Destinos</span>
+    <h2>El Caribe te espera</h2>
+    <p class="sub">Isla Mujeres, Cozumel, Chichén Itzá, Bacalar, cenotes, parques y mucho más. Todos nuestros tours se cotizan por WhatsApp, sin sorpresas.</p></div>
+    <div class="grid">
+      <div class="card reveal d1"><div class="ph"><img src="img/gal-letras-isla.jpg" alt="Isla Mujeres"></div><div class="body"><h3>Isla Mujeres</h3><p class="meta">Playas, atardeceres y Punta Sur</p><ul><li>Mar Caribe y Mar Turquesa</li><li>Paseo de las Sirenas</li><li>Punta Sur al atardecer</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20el%20tour%20a%20Isla%20Mujeres">Cotizar</a></div></div>
+      <div class="card reveal d2"><div class="ph"><img src="img/el-cielo-4h.jpg" alt="Cozumel, El Cielo"></div><div class="body"><h3>Cozumel — El Cielo</h3><p class="meta">El banco de arena más famoso del Caribe</p><ul><li>Palancar y Colombia</li><li>El Cielo y El Cielito</li><li>Snorkel entre estrellas de mar</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20el%20tour%20El%20Cielo%20en%20Cozumel">Cotizar</a></div></div>
+      <div class="card reveal d3"><div class="ph"><img src="img/chichen-clasico.jpg" alt="Chichén Itzá"></div><div class="body"><h3>Chichén Itzá</h3><p class="meta">Maravilla del mundo maya</p><ul><li>Zona arqueológica</li><li>Valladolid</li><li>Comida buffet y cenote</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20el%20tour%20a%20Chich%C3%A9n%20Itz%C3%A1">Cotizar</a></div></div>
+      <div class="card reveal d4"><div class="ph"><img src="img/bacalar-roadtrip.jpg" alt="Bacalar"></div><div class="body"><h3>Bacalar</h3><p class="meta">La laguna de los siete colores</p><ul><li>Road trip desde Cancún</li><li>Puntos más bonitos de la laguna</li><li>Un día completo de aventura</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20el%20tour%20a%20Bacalar">Cotizar</a></div></div>
+      <div class="card reveal d5"><div class="ph"><img src="img/cenote-foto.jpg" alt="Cenotes"></div><div class="body"><h3>Cenotes</h3><p class="meta">Casa Tortuga y más cenotes de Tulum</p><ul><li>4 cenotes en un solo tour</li><li>Guía certificado</li><li>Chaleco salvavidas incluido</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20el%20tour%20de%20cenotes">Cotizar</a></div></div>
+      <div class="card reveal d1"><div class="ph"><img src="img/parques-xcaret.jpg" alt="Parques Xcaret, Xel-Há, Xplor"></div><div class="body"><h3>Parques: Xcaret, Xel-Há, Xplor</h3><p class="meta">Y Xoximilco y Xenses</p><ul><li>Naturaleza, cultura y aventura</li><li>Xplor y Xplor Fuego</li><li>Reserva hoy mismo</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20los%20parques%20Xcaret%20y%20Xel-H%C3%A1">Cotizar</a></div></div>
+    </div>
+    <div class="note reveal">También visitamos <b>Cobá</b> y <b>Xel-Há</b>. Pregúntanos por WhatsApp y armamos tu tour a tu medida. 🌴</div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z"/></svg>
+
+<section style="background:var(--sky);padding-top:20px">
+  <div class="wrap">
+    <div class="reveal"><span class="eyebrow">🛥️ Tours en el mar</span>
+    <h2>Catamaranes, yates y pesca</h2>
+    <p class="sub">El mar turquesa del Caribe en barco, con barra libre, snorkel y el mejor ambiente. Elige tu embarcación y cotiza por WhatsApp.</p></div>
+    <div class="grid">
+      <div class="card reveal d1"><div class="ph tall"><img src="img/el-cielo-lalos.jpg" alt="Tour El Cielo Cozumel"></div><div class="body"><h3>Tour El Cielo — Lalo's Snorkel</h3><p class="meta">Cozumel · 4 horas</p><ul><li>Palancar, Colombia, El Cielo y El Cielito</li><li>Barra libre</li><li>Snorkel espectacular</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20el%20Tour%20El%20Cielo%20de%20Lalo%27s">Cotizar</a></div></div>
+      <div class="card reveal d2"><div class="ph tall"><img src="img/cat-chile-tequila.jpg" alt="Catamarán Chile Tequila"></div><div class="body"><h3>Catamarán Chile Tequila</h3><p class="meta">Cozumel</p><ul><li>Barra libre</li><li>Alimentos, snacks y ceviche</li><li>Snorkel en Palancar, Cielo y Cielito</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20el%20catamar%C3%A1n%20Chile%20Tequila">Cotizar</a></div></div>
+      <div class="card reveal d3"><div class="ph tall"><img src="img/cat-party-boat.jpg" alt="Party Boat Catamarán"></div><div class="body"><h3>Party Boat Catamarán</h3><p class="meta">Cozumel</p><ul><li>Snorkel en arrecife</li><li>El Cielo y El Cielito</li><li>Snack y bebidas a bordo</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20el%20Party%20Boat%20Catamar%C3%A1n">Cotizar</a></div></div>
+      <div class="card reveal d4"><div class="ph tall"><img src="img/cat-playa-fury.jpg" alt="Catamarán Playa Fury"></div><div class="body"><h3>Catamarán Playa Fury</h3><p class="meta">Cozumel</p><ul><li>Arrecifes a visitar</li><li>El Cielo y El Cielito</li><li>Equipo de snorkel incluido</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20el%20catamar%C3%A1n%20Playa%20Fury">Cotizar</a></div></div>
+      <div class="card reveal d5"><div class="ph tall"><img src="img/cat-gyg.jpg" alt="G&G Cozumel en catamarán"></div><div class="body"><h3>G&amp;G Cozumel en Catamarán</h3><p class="meta">Cozumel</p><ul><li>Tour en catamarán</li><li>Snorkel y playa</li><li>Ambiente familiar</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20el%20catamar%C3%A1n%20G%26G%20Cozumel">Cotizar</a></div></div>
+      <div class="card reveal d1"><div class="ph"><img src="img/pesca-dorado.jpg" alt="Pesca deportiva"></div><div class="body"><h3>Pesca deportiva</h3><p class="meta">Atún, marlín y dorado</p><ul><li>Equipo de pesca incluido</li><li>Capitán experimentado</li><li>Una aventura inolvidable</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20la%20pesca%20deportiva">Cotizar</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--sun);padding-top:20px">
+  <div class="wrap">
+    <div class="reveal"><span class="eyebrow">⚓ Yates privados</span>
+    <h2>Renta tu yate en Cancún</h2>
+    <p class="sub">Yates de 36 y 45 pies para 12 o 15 personas, con todo incluido a bordo. Cotiza tu renta por WhatsApp.</p></div>
+    <div class="grid">
+      <div class="card reveal d1"><div class="ph"><img src="img/yate-atenea.jpg" alt="Yate Atenea"></div><div class="body"><h3>Atenea — 45 pies</h3><p class="meta">Hasta 15 personas</p><ul><li>24 cervezas, 24 refrescos y 24 botellas de agua</li><li>4 bolsas de hielo y vino espumoso</li><li>Equipo de snorkel, tapete flotante y toallas</li><li>Sistema de audio Bluetooth</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20la%20renta%20del%20yate%20Atenea">Cotizar</a></div></div>
+      <div class="card reveal d2"><div class="ph"><img src="img/yate-explorer.jpg" alt="Yate Explorer"></div><div class="body"><h3>Explorer — Sea Ray 45'</h3><p class="meta">Hasta 15 personas</p><ul><li>24 cervezas, 24 refrescos y 24 botellas de agua</li><li>4 bolsas de hielo y vino espumoso</li><li>Equipo de snorkel, tapete flotante y toallas</li><li>Sistema de audio Bluetooth</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20la%20renta%20del%20yate%20Explorer">Cotizar</a></div></div>
+      <div class="card reveal d3"><div class="ph"><img src="img/yate-isabella.jpg" alt="Yate Isabella"></div><div class="body"><h3>Isabella — 36 pies</h3><p class="meta">Hasta 12 personas</p><ul><li>24 cervezas, 24 refrescos y 24 botellas de agua</li><li>4 bolsas de hielo</li><li>Equipo de snorkel, tapete flotante y toallas</li><li>Sistema de audio Bluetooth</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20la%20renta%20del%20yate%20Isabella">Cotizar</a></div></div>
+      <div class="card reveal d4"><div class="ph"><img src="img/yate-redfire.jpg" alt="Yate Red Fire"></div><div class="body"><h3>Red Fire — 45 pies</h3><p class="meta">Hasta 15 personas</p><ul><li>24 cervezas, 24 refrescos y 24 botellas de agua</li><li>4 bolsas de hielo y vino espumoso</li><li>Equipo de snorkel, tapete flotante y toallas</li><li>Sistema de audio Bluetooth</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20la%20renta%20del%20yate%20Red%20Fire">Cotizar</a></div></div>
+      <div class="card reveal d5"><div class="ph"><img src="img/yate-agora.jpg" alt="Yate Agora"></div><div class="body"><h3>Agora — 45 pies</h3><p class="meta">Hasta 15 personas</p><ul><li>24 cervezas, 24 refrescos y 24 botellas de agua</li><li>4 bolsas de hielo y vino espumoso</li><li>Equipo de snorkel, tapete flotante y toallas</li><li>Sistema de audio Bluetooth</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20la%20renta%20del%20yate%20Agora">Cotizar</a></div></div>
+      <div class="card reveal d1"><div class="ph"><img src="img/yate-xtrimfun.jpg" alt="Yate Xtrim Fun"></div><div class="body"><h3>Xtrim Fun — 36 pies</h3><p class="meta">Hasta 12 personas</p><ul><li>24 cervezas, 24 refrescos y 24 botellas de agua</li><li>4 bolsas de hielo</li><li>Equipo de snorkel, tapete flotante y toallas</li><li>Sistema de audio Bluetooth</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20la%20renta%20del%20yate%20Xtrim%20Fun">Cotizar</a></div></div>
+      <div class="card reveal d2"><div class="ph"><img src="img/yate-azul.jpg" alt="Yate Azul"></div><div class="body"><h3>Azul — 45 pies</h3><p class="meta">Hasta 15 personas</p><ul><li>24 cervezas, 24 refrescos y 24 botellas de agua</li><li>4 bolsas de hielo y vino espumoso</li><li>Equipo de snorkel, tapete flotante y toallas</li><li>Sistema de audio Bluetooth</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20la%20renta%20del%20yate%20Azul">Cotizar</a></div></div>
+      <div class="card reveal d3"><div class="ph tall"><img src="img/yate-hampton.jpg" alt="Yate Hampton 46 pies"></div><div class="body"><h3>Hampton — 46 pies</h3><p class="meta">Yate de lujo</p><ul><li>Amplio espacio para tu grupo</li><li>Comodidad y lujo a bordo</li><li>Ideal para celebraciones</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20la%20renta%20del%20yate%20Hampton">Cotizar</a></div></div>
+    </div>
+  </div>
+</section>
+
+<svg class="wave yellow" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z"/></svg>
+
+<section>
+  <div class="wrap">
+    <div class="reveal"><span class="eyebrow">🏛️ Riviera Maya</span>
+    <h2>Cultura, cenotes y aventura</h2>
+    <p class="sub">De las pirámides de Chichén Itzá a las aguas de Tulum y Akumal. Todo con guía y transporte, cotiza por WhatsApp.</p></div>
+    <div class="grid">
+      <div class="card reveal d1"><div class="ph"><img src="img/chichen-noches.jpg" alt="Chichén Itzá Noches de Kukulkán"></div><div class="body"><h3>Chichén Itzá — Noches de Kukulkán</h3><p class="meta">Historia, cultura y magia</p><ul><li>Espectáculo de luz y sonido</li><li>Transporte redondo</li><li>Entrada a Chichén Itzá</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20Chich%C3%A9n%20Itz%C3%A1%20Noches%20de%20Kukulk%C3%A1n">Cotizar</a></div></div>
+      <div class="card reveal d2"><div class="ph"><img src="img/chichen-clasico.jpg" alt="Chichén Itzá Clásico"></div><div class="body"><h3>Chichén Itzá Clásico</h3><p class="meta">Descubre la maravilla del mundo maya</p><ul><li>Chichén Itzá y Valladolid</li><li>Comida buffet</li><li>Nado en cenote</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20Chich%C3%A9n%20Itz%C3%A1%20Cl%C3%A1sico">Cotizar</a></div></div>
+      <div class="card reveal d3"><div class="ph tall"><img src="img/chichen-3col.jpg" alt="Chichén Itzá Classic, Deluxe y Diamante"></div><div class="body"><h3>Chichén Itzá — Classic, Deluxe y Diamante</h3><p class="meta">Tres formas de vivirlo</p><ul><li>Elige el nivel de tu experiencia</li><li>Transporte, guía y entradas</li><li>Comida y cenote incluidos</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20Chich%C3%A9n%20Itz%C3%A1%20Classic%2C%20Deluxe%20o%20Diamante">Cotizar</a></div></div>
+      <div class="card reveal d4"><div class="ph tall"><img src="img/tulum-morcan.jpg" alt="Tulum"></div><div class="body"><h3>Tulum</h3><p class="meta">Zona arqueológica frente al mar</p><ul><li>Ruinas de Tulum</li><li>Playa y cenotes</li><li>Guía certificado</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20el%20tour%20a%20Tulum">Cotizar</a></div></div>
+      <div class="card reveal d5"><div class="ph tall"><img src="img/tulum-magico.jpg" alt="Tulum Mágico"></div><div class="body"><h3>Tulum Mágico</h3><p class="meta">Lo mejor de Tulum en un día</p><ul><li>Zona arqueológica</li><li>Cenotes y playa</li><li>Transporte y guía</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20el%20tour%20Tulum%20M%C3%A1gico">Cotizar</a></div></div>
+      <div class="card reveal d1"><div class="ph tall"><img src="img/akumal.jpg" alt="Akumal"></div><div class="body"><h3>Akumal</h3><p class="meta">Nada con tortugas</p><ul><li>Snorkel con tortugas marinas</li><li>Arrecife y cenote</li><li>Guía certificado</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20el%20tour%20a%20Akumal">Cotizar</a></div></div>
+      <div class="card reveal d2"><div class="ph tall"><img src="img/akumal-magico.jpg" alt="Akumal Mágico"></div><div class="body"><h3>Akumal Mágico</h3><p class="meta">Tortugas, cenote y playa</p><ul><li>Nado con tortugas</li><li>Cenote y arrecife</li><li>Transporte y guía</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20el%20tour%20Akumal%20M%C3%A1gico">Cotizar</a></div></div>
+      <div class="card reveal d3"><div class="ph"><img src="img/cenote-casa-tortuga.jpg" alt="Cenote Casa Tortuga"></div><div class="body"><h3>Cenote Casa Tortuga — Tulum</h3><p class="meta">4 cenotes en un solo tour</p><ul><li>100% natural</li><li>Guía certificado</li><li>Chaleco salvavidas</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20el%20tour%20Cenote%20Casa%20Tortuga">Cotizar</a></div></div>
+      <div class="card reveal d4"><div class="ph tall"><img src="img/isla-contoy.jpg" alt="Isla Contoy e Isla Mujeres"></div><div class="body"><h3>Isla Contoy e Isla Mujeres</h3><p class="meta">Lunes, miércoles y viernes</p><ul><li>Tour completo en lancha</li><li>Snorkel en arrecife</li><li>Playa y comida</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20el%20tour%20Isla%20Contoy%20e%20Isla%20Mujeres">Cotizar</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--sky2)">
+  <div class="wrap">
+    <div class="reveal"><span class="eyebrow">🏍️ Aventura</span>
+    <h2>Adrenalina en la selva y en Cozumel</h2>
+    <p class="sub">ATV, buggy, jeep y recorridos por la isla. Cotiza por WhatsApp.</p></div>
+    <div class="grid">
+      <div class="card reveal d1"><div class="ph tall"><img src="img/atv-jade.jpg" alt="ATV Jade y Playa Uvas"></div><div class="body"><h3>ATV Jade + Playa Uvas</h3><p class="meta">Cozumel</p><ul><li>Recorrido en ATV por la selva</li><li>Tiempo en Playa Uvas</li><li>La aventura completa</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20el%20tour%20ATV%20Jade%20y%20Playa%20Uvas">Cotizar</a></div></div>
+      <div class="card reveal d2"><div class="ph tall"><img src="img/buggy.jpg" alt="Buggy Tour"></div><div class="body"><h3>Buggy Tour a tu medida</h3><p class="meta">Cozumel</p><ul><li>Recorrido por la isla en buggy</li><li>Paradas en playas y miradores</li><li>Tour flexible</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20el%20Buggy%20Tour">Cotizar</a></div></div>
+      <div class="card reveal d3"><div class="ph"><img src="img/jeep.jpg" alt="Jeep Tour"></div><div class="body"><h3>Jeep Tour</h3><p class="meta">Cozumel</p><ul><li>Recorre la isla en Jeep</li><li>Playas, ruinas y miradores</li><li>Guía local</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20el%20Jeep%20Tour">Cotizar</a></div></div>
+      <div class="card reveal d4"><div class="ph"><img src="img/cozumel-shorty.jpg" alt="Shorty Cozumel"></div><div class="body"><h3>Shorty Cozumel</h3><p class="meta">Tour de 4 horas</p><ul><li>Recorrido por el centro de Cozumel</li><li>Tiempo en Playa Uvas</li><li>Visita de monumentos</li></ul><a class="btn small" href="https://wa.me/529844682036?text=Hola%2C%20quiero%20cotizar%20el%20tour%20Shorty%20Cozumel">Cotizar</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="reveal"><span class="eyebrow">📸 Galería</span>
+    <h2>Así se ve el paraíso</h2>
+    <p class="sub">Fotos reales de nuestros tours, yates y playas.</p></div>
+    <div class="gal reveal">
+      <img src="img/gal-victoria-proa.jpg" alt="Yate Victoria, proa" loading="lazy">
+      <img src="img/gal-victoria-aerea.jpg" alt="Yate Victoria, vista aérea" loading="lazy">
+      <img src="img/gal-victoria-cabina.jpg" alt="Yate Victoria, cabina" loading="lazy">
+      <img src="img/gal-victoria-cockpit.jpg" alt="Yate Victoria, cabina de mando" loading="lazy">
+      <img src="img/gal-snorkel.jpg" alt="Snorkel con peces" loading="lazy">
+      <img src="img/gal-barco-cristal.jpg" alt="Barco con fondo de cristal" loading="lazy">
+      <img src="img/gal-sirenas.jpg" alt="Isla Mujeres, Paseo de las Sirenas" loading="lazy">
+      <img src="img/gal-punta-sur.jpg" alt="Isla Mujeres, Punta Sur" loading="lazy">
+      <img src="img/gal-letras-isla.jpg" alt="Isla Mujeres, letras" loading="lazy">
+      <img src="img/gal-playa-signo.jpg" alt="Isla Mujeres, playa" loading="lazy">
+      <img src="img/pesca-grupo.jpg" alt="Pesca deportiva en grupo" loading="lazy">
+      <img src="img/pesca-marlin.jpg" alt="Pesca de marlín" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--sky)">
+  <div class="wrap">
+    <div class="meet">
+      <div class="reveal"><span class="eyebrow">📍 Punto de encuentro</span>
+      <h2>Nos vemos en Cozumel</h2>
+      <p class="sub">Nuestro punto de encuentro en Cozumel es en el muelle, junto al Parque. Te esperamos ahí para salir a tu tour. Si tienes dudas de cómo llegar, escríbenos por WhatsApp y te guiamos.</p>
+      <a class="btn blue" href="https://wa.me/529844682036?text=Hola%2C%20%C2%BFd%C3%B3nde%20es%20el%20punto%20de%20encuentro%20en%20Cozumel%3F">Preguntar por WhatsApp</a></div>
+      <div class="reveal d2"><img src="img/punto-encuentro.jpg" alt="Punto de encuentro en Cozumel"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="contact reveal">
+      <span class="eyebrow">💬 Contacto</span>
+      <h2>¿Listo para vivir el Caribe?</h2>
+      <p>Escríbenos por WhatsApp y cotizamos tu tour sin compromiso.<br>Playa del Carmen — Mamitas Beach, 5ª Avenida<br><span class="big">WhatsApp: 984 468 2036</span></p>
+      <a class="btn" href="https://wa.me/529844682036?text=Hola%20Hola%20Hola%20Tours%2C%20quiero%20cotizar%20un%20tour">💬 Cotizar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <b>Hola Hola Tours</b> — Vive el Caribe como siempre soñaste 🌴🌊<br>
+  Experiencias en la Riviera Maya · Isla Mujeres · Cozumel · Chichén Itzá · Bacalar · Xcaret y parques · Cenotes
+</footer>
+
+<a class="wa-float" href="https://wa.me/529844682036?text=Hola%20Hola%20Hola%20Tours%2C%20quiero%20cotizar%20un%20tour" aria-label="WhatsApp">💬</a>
+
+<script>
+(function(){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(function(){}); }
+})();
+</script>
+</body>
+</html>

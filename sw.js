@@ -1,4 +1,4 @@
-const CACHE = 'hola-hola-tours-v3';
+const CACHE = 'hola-hola-tours-v4';
 const CORE = ['index.html', 'manifest.json', 'img/logo.jpg', 'img/hero.jpg'];
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(CORE); }).catch(function () {}));
